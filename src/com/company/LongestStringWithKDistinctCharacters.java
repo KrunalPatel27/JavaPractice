@@ -20,53 +20,103 @@ public class LongestStringWithKDistinctCharacters {
 
     private int maxSubstringLength;
     private String maxSubstring;
-    private int currentMax;
+    private int currentMax = 0;
     LinkedList<Character> lList;
     HashMap<Character,Integer> currentWindowCharacters;
     StringBuilder builder = new StringBuilder();
 
     public LongestStringWithKDistinctCharacters(){
         this.maxSubstring = "";
-        System.out.println(longestSubStringWithKDistinctCharacterUniDirectional("abcbe", 2));
+        System.out.println(longestSubStringWithKDistinctCharacterUniDirectional("abcbeebccbccb", 2));
     }
 
-    private String longestSubStringWithKDistinctCharacterUniDirectional(String input, int k) {
-        int totalInputLength = input.length();
+        private String longestSubStringWithKDistinctCharacterUniDirectional(String input, int k) {
+        int inputLength = input.length();
         currentWindowCharacters = new HashMap<Character, Integer>(k);
-        lList = new LinkedList<Character>();
-        int currentCount=0;
-
-        for(int i = 0; i<totalInputLength; i++){
+        for(int i =0; i< inputLength; i++){
             char ch = input.charAt(i);
-            if(currentCount<k && !currentWindowCharacters.containsKey(ch)){
-                addToQueue(ch);
-                currentCount++;
-            }else if(!currentWindowCharacters.containsKey(ch)){
-                popResetAdd(ch);
+            if(currentWindowCharacters.size()== k){
+                if(!currentWindowCharacters.containsKey(ch){
+                    popFirstOfWindow();
+                }
             }
-            currentWindowCharacters.put(ch, currentMax);
             currentMax++;
+            addToWindow(ch);
         }
-        return null;
+
+
+        return maxSubstring;
+    }
+    public char popChar(){
+        int low=-1;
+        char retChar = '';
+        for (char ch: currentWindowCharacters.keySet()) {
+            if(low == -1){
+                low = currentWindowCharacters.get(ch);
+                retChar = ch;
+            }
+            if(low > currentWindowCharacters.get(ch)) {
+                low = currentWindowCharacters.get(ch);
+                retChar = ch;
+            }
+        }
+        return retChar;
     }
 
-    private void popResetAdd(Character ch) {
-        char last =  lList.removeLast().charValue();
-        lList.add(ch);
-        String temp = builder.toString();
-        if(temp.length() > maxSubstringLength){
-            maxSubstringLength = temp.length();
-            maxSubstring = temp;
-        }
-        int index = currentWindowCharacters.get(last);
-        builder.delete(0,index);
-        currentMax -=index;
+    private void popFirstOfWindow() {
+        
     }
 
-    private void addToQueue(Character e) {
-        lList.add(e);
-        builder.append(e);
+    private void addToWindow(char ch) {
+        currentWindowCharacters.put(ch, currentMax);
     }
+
+
+//    private String longestSubStringWithKDistinctCharacterUniDirectional(String input, int k) {
+//        int totalInputLength = input.length();
+//        currentWindowCharacters = new HashMap<Character, Integer>(k);
+//        lList = new LinkedList<Character>();
+//        int currentCount=0;
+//        char last = input.charAt(0);
+//        lList.add(input.charAt(0));
+//        for(int i = 0; i<totalInputLength; i++){
+//            char ch = input.charAt(i);
+//            if(currentCount<k && !currentWindowCharacters.containsKey(ch)){
+//                addToQueue(ch);
+//                currentCount++;
+//            }else if(!currentWindowCharacters.containsKey(ch)){
+//                popResetAdd(ch);
+//            }
+//            currentWindowCharacters.put(ch, ++currentMax);
+//            builder.append(ch);
+//            if(ch != last) {
+//                lList.removeFirst();
+//                lList.add(ch);
+//                last = ch;
+//            }
+//        }
+//        popResetAdd(' ');
+//        return maxSubstring;
+//    }
+//
+//    private void popResetAdd(Character ch) {
+//        char last =  lList.getFirst().charValue();
+//        String temp = builder.toString();
+//        System.out.println("Temp: " + temp);
+//        if(temp.length() > maxSubstringLength){
+//            maxSubstringLength = temp.length();
+//            maxSubstring = temp;
+//        }
+//        int index = currentWindowCharacters.get(last);
+//        builder.delete(0,index);
+//        currentMax -=index;
+//        System.out.println("AfterDelete: "+builder.toString()+ "tempLength: " + currentMax);
+//        currentWindowCharacters.remove(last);
+//    }
+//
+//    private void addToQueue(Character e) {
+//        lList.add(e);
+//    }
 
 
 //    private String longestSubStringWithKDistinctCharacterUniDirectional(String str) {
