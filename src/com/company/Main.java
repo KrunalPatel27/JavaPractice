@@ -6,7 +6,9 @@ public class Main {
 
 
     public static void main (String[] args){
-        LongestStringWithKDistinctCharacters longestStringWithKDistinctCharacters =
-                new LongestStringWithKDistinctCharacters();
+        MedianTwoSortedArrays medianTwoSortedArrays = new MedianTwoSortedArrays();
+
+//        LongestStringWithKDistinctCharacters longestStringWithKDistinctCharacters =
+//                new LongestStringWithKDistinctCharacters();
     }
 }

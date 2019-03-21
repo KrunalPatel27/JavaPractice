@@ -19,6 +19,7 @@ import java.util.*;
 public class LongestStringWithKDistinctCharacters {
 
     private int maxSubstringLength;
+    int start =0;
     private String maxSubstring;
     private int currentMax = 0;
     LinkedList<Character> lList;
@@ -30,26 +31,26 @@ public class LongestStringWithKDistinctCharacters {
         System.out.println(longestSubStringWithKDistinctCharacterUniDirectional("abcbeebccbccb", 2));
     }
 
-        private String longestSubStringWithKDistinctCharacterUniDirectional(String input, int k) {
+    private String longestSubStringWithKDistinctCharacterUniDirectional(String input, int k) {
         int inputLength = input.length();
         currentWindowCharacters = new HashMap<Character, Integer>(k);
+
         for(int i =0; i< inputLength; i++){
             char ch = input.charAt(i);
             if(currentWindowCharacters.size()== k){
-                if(!currentWindowCharacters.containsKey(ch){
+                if(!currentWindowCharacters.containsKey(ch)){
                     popFirstOfWindow();
                 }
             }
-            currentMax++;
             addToWindow(ch);
         }
-
-
+        popFirstOfWindow();
         return maxSubstring;
     }
+
     public char popChar(){
         int low=-1;
-        char retChar = '';
+        char retChar = ' ';
         for (char ch: currentWindowCharacters.keySet()) {
             if(low == -1){
                 low = currentWindowCharacters.get(ch);
@@ -64,11 +65,20 @@ public class LongestStringWithKDistinctCharacters {
     }
 
     private void popFirstOfWindow() {
-        
+        char toPop = popChar();
+        String temp = builder.substring(start);
+        // System.out.println("tempStr: "+ temp + ", size: "+temp.length());
+        if(temp.length() > maxSubstringLength){
+            maxSubstring = temp;
+            maxSubstringLength = temp.length();
+        }
+        start = currentWindowCharacters.get(toPop) + 1;
+        currentWindowCharacters.remove(toPop);
     }
 
     private void addToWindow(char ch) {
-        currentWindowCharacters.put(ch, currentMax);
+        currentWindowCharacters.put(ch, currentMax++);
+        builder.append(ch);
     }
 
 
