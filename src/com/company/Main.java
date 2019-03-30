@@ -6,9 +6,9 @@ public class Main {
 
 
     public static void main (String[] args){
-        BinaryInsert binaryInsert = new BinaryInsert();
-
+        PowerSet powerSet = new PowerSet();
         /*
+        BinaryInsert binaryInsert = new BinaryInsert();
         MedianTwoSortedArrays medianTwoSortedArrays = new MedianTwoSortedArrays();
         LongestStringWithKDistinctCharacters longestStringWithKDistinctCharacters =
                 new LongestStringWithKDistinctCharacters();
