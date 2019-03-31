@@ -5,10 +5,11 @@ public class BinarySearchTree {
 
     public BinarySearchTree( int root){
         this.root = new Node(root);
-        for(int i: data){
-            insert(i);
-        }
-        System.out.println(this.root.data);
+        for(int i: data) insert(i);
+    }
+    public BinarySearchTree( int root, int[] data){
+        this.root = new Node(root);
+        for(int i: data) insert(i);
     }
     private void insert(int data){
         Node currNode = this.root;

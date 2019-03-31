@@ -23,6 +23,8 @@ public class Main {
                 LongestStringWithKDistinctCharacters longestStringWithKDistinctCharacters =
                         new LongestStringWithKDistinctCharacters();
                 break;
+            case 6:
+                SecondLargestNodeBST secondLargestNodeBST = new SecondLargestNodeBST();
         }
 
     }
