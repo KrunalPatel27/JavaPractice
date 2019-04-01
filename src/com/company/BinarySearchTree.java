@@ -1,7 +1,7 @@
 package com.company;
 public class BinarySearchTree {
-    int[] data = {5,2,3,4,9,10,6};
-    Node root;
+    public int[] data = {5,2,3,4,9,10,6};
+    public Node root;
 
     public BinarySearchTree( int root){
         this.root = new Node(root);

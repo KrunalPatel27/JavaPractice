@@ -1,5 +1,7 @@
 package com.company;
 
+import com.company.Trees.SumOfAllNodes;
+
 import java.util.*;
 
 public class Main {
@@ -25,6 +27,8 @@ public class Main {
                 break;
             case 6:
                 SecondLargestNodeBST secondLargestNodeBST = new SecondLargestNodeBST();
+            case 7:
+                SumOfAllNodes sumOfAllNodes = new SumOfAllNodes();
         }
 
     }
