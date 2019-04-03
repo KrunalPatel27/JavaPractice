@@ -34,6 +34,8 @@ public class Main {
                 break;
             case 8:
                 NonDuplicateInteger nonDuplicateInteger = new NonDuplicateInteger();
+            case 9:
+                ConwaysGame conwaysGame = new ConwaysGame();
         }
 
     }
