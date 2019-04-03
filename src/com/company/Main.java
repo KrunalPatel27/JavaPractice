@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.Bitwise.NonDuplicateInteger;
 import com.company.Trees.SumOfAllNodes;
 
 import java.util.*;
@@ -27,8 +28,12 @@ public class Main {
                 break;
             case 6:
                 SecondLargestNodeBST secondLargestNodeBST = new SecondLargestNodeBST();
+                break;
             case 7:
                 SumOfAllNodes sumOfAllNodes = new SumOfAllNodes();
+                break;
+            case 8:
+                NonDuplicateInteger nonDuplicateInteger = new NonDuplicateInteger();
         }
 
     }
