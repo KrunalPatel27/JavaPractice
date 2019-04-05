@@ -36,6 +36,8 @@ public class Main {
                 NonDuplicateInteger nonDuplicateInteger = new NonDuplicateInteger();
             case 9:
                 ConwaysGame conwaysGame = new ConwaysGame();
+            case 10:
+                AllSubsetOfArray allSubsetOfArray = new AllSubsetOfArray();
         }
 
     }

@@ -12,7 +12,11 @@ public class ConwaysGame {
     char[][] gameBoard;
     int nBoardSize = 5;
     public ConwaysGame(){
-        initializeGameBoard();
+        gameBoard= createAGameBoard();
+        gameBoard[1][1] = '.';
+        gameBoard[1][2] = '.';
+        gameBoard[2][1] = '.';
+        gameBoard[3][2] = '.';
         nNextState(2);
     }
 
@@ -23,18 +27,14 @@ public class ConwaysGame {
         }
     }
 
-    private void initializeGameBoard() {
+    private char[][] createAGameBoard() {
         gameBoard = new char[nBoardSize][nBoardSize];
         for(int i =0; i< nBoardSize; i++){
             for(int j =0; j< nBoardSize; j++){
                 gameBoard[i][j] = '*';
             }
         }
-        gameBoard[1][1] = '.';
-        gameBoard[1][2] = '.';
-        gameBoard[2][1] = '.';
-        gameBoard[3][2] = '.';
-        printBoard();
+        return gameBoard;
     }
 
     private void printBoard() {
@@ -52,7 +52,7 @@ public class ConwaysGame {
         for(int i= 0; i<nBoardSize; i++){
             for(int j=0; j<nBoardSize; j++){
                 int liveNeighbours = countLiveNeighbours(i,j);
-                if(isAlive('*')) {
+                if(isAlive(gameBoard[i][j])) {
                     if (liveNeighbours < 2 || liveNeighbours > 3) dies(i,j);
                 }else{
                     if(liveNeighbours == 3) alive(i,j);
