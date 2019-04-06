@@ -25,13 +25,15 @@ public class AllSubsetOfArray {
         System.out.println( );
         head = new Node("");
         tail = head;
-        System.out.println(head.val);
+        this.totalNodes++;
+        System.out.println(":"+head.val);
         for(int i=0; i<arr.length; i++){
             String nextVal = Integer.toString(arr[i]);
             Node iter = head;
-            while(iter != last){
+            int last = this.totalNodes;
+            for(int j = 0; j < last; j++){
                 newNode(iter.val + nextVal);
-                System.out.println(last.val);
+                System.out.println(":"+tail.val);
                 iter = iter.next;
             }
         }
