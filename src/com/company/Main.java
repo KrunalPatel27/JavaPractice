@@ -38,6 +38,8 @@ public class Main {
                 ConwaysGame conwaysGame = new ConwaysGame();
             case 10:
                 AllSubsetOfArray allSubsetOfArray = new AllSubsetOfArray();
+            case 11:
+                StockBuyAndSell stockBuyAndSell = new StockBuyAndSell();
         }
 
     }
