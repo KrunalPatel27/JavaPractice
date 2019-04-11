@@ -1,4 +1,7 @@
 package com.company;
+
+import com.company.Trees.Node;
+
 public class BinarySearchTree {
     public int[] data = {5,2,3,4,9,10,6};
     public Node root;

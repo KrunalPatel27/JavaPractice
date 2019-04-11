@@ -1,7 +1,6 @@
 package com.company.Trees;
 
 import com.company.BinarySearchTree;
-import com.company.Node;
 
 public class SumOfAllNodes {
     int sum=0;

@@ -1,5 +1,7 @@
 package com.company;
 
+import com.company.Trees.Node;
+
 /**
  *  This problem was asked by Dropbox.
 
