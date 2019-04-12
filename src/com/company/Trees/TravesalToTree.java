@@ -2,6 +2,7 @@ package com.company.Trees;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 /**
  * Given pre-order and in-order traversals of a binary tree, write a function to reconstruct the tree.
@@ -19,24 +20,45 @@ import java.util.Queue;
  *
 */
 public class TravesalToTree {
+
     Node root;
     int[] preOrder = {1,2,4,5,3,6,7};
     int[] inOrder = {4,2,5,1,6,3,7};
-    LinkedList<Integer> stack = new LinkedList<>();
+    int length;
 
-    public TravesalToTree(){
-        this.generateTree();
+
+    public TravesalToTree() throws Exception {
+        this.length = preOrder.length;
+        root = new Node(preOrder[0]);
+        this.generateTree(0, length, 0, root);
+        System.out.println(root);
     }
 
-    private void generateTree() {
-        this.root = new Node(preOrder[0]);
-        stack.add(preOrder[0]);
-        for(int i=1; i< preOrder.length; i++){
-            this.insert(preOrder[i]);
+    private int generateTree(int min, int max, int index, Node n) throws Exception {
+        System.out.println(index);
+        if(min == max) return index;
+        if(!(index >=0 && index < length)) throw new Exception("Out of Bounds Index");
+
+        int currIndex = findFromInOrder(preOrder[index]);
+        if(currIndex>min){
+            Node left = new Node(preOrder[++index]);
+            n.left = left;
+            index = generateTree(min, currIndex-1,index, left );
         }
+        if(currIndex<max && index< length-1){
+            Node right = new Node(preOrder[++index]);
+            n.right = right;
+            if(index < length)
+                index = generateTree(currIndex+1,max,index, right);
+        }
+        return index;
     }
 
-    private void insert(int i) {
-        for()
+    private int findFromInOrder(int val) {
+        for(int i =0; i < length; i++){
+            if(val == inOrder[i])return i;
+        }
+        return -1;
     }
+
 }
