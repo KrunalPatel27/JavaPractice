@@ -37,6 +37,12 @@ public class TravesalToTree {
         System.out.println(" equals ");
         Arrays.stream(preOrder).forEach(e-> System.out.print(e));
 
+        System.out.println();
+
+        InOrder(root);
+        System.out.println(" equals ");
+        Arrays.stream(inOrder).forEach(e-> System.out.print(e));
+
     }
 
     private int generateTree(int min, int max, int index, Node n) throws Exception {
@@ -71,6 +77,14 @@ public class TravesalToTree {
         System.out.print(n.data);
         PreOrder(n.left);
         PreOrder(n.right);
+    }
+
+    // left, root, right
+    public void InOrder(Node n){
+        if(n == null)return;
+        InOrder(n.left);
+        System.out.print (n.data);
+        InOrder(n.right);
     }
 
 }
