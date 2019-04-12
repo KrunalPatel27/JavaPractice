@@ -1,5 +1,7 @@
 package com.company.Trees;
 
+import javax.annotation.PreDestroy;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
@@ -31,11 +33,13 @@ public class TravesalToTree {
         this.length = preOrder.length;
         root = new Node(preOrder[0]);
         this.generateTree(0, length, 0, root);
-        System.out.println(root);
+        PreOrder(root);
+        System.out.println(" equals ");
+        Arrays.stream(preOrder).forEach(e-> System.out.print(e));
+
     }
 
     private int generateTree(int min, int max, int index, Node n) throws Exception {
-        System.out.println(index);
         if(min == max) return index;
         if(!(index >=0 && index < length)) throw new Exception("Out of Bounds Index");
 
@@ -59,6 +63,14 @@ public class TravesalToTree {
             if(val == inOrder[i])return i;
         }
         return -1;
+    }
+
+    // root, left, right
+    public void PreOrder(Node n){
+        if(n == null)return;
+        System.out.print(n.data);
+        PreOrder(n.left);
+        PreOrder(n.right);
     }
 
 }
