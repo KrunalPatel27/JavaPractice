@@ -24,13 +24,13 @@ public class SecondLargestNodeBST {
             previousNode = currentNode;
             currentNode = currentNode.right;
         }
-        if(currentNode.left == null) return previousNode.data;
+        if(currentNode.left == null) return (int)previousNode.data;
         currentNode = currentNode.left;
         while(currentNode.right !=null){
             currentNode = currentNode.right;
         }
 
-        return currentNode.data;
+        return (int)currentNode.data;
     }
 
 

@@ -1,11 +1,12 @@
 package com.company.Trees;
 
-public class Node {
-    public int data;
+public class Node<T> {
+    public T data;
+
     public Node left;
     public Node right;
 
-    public Node(int root) {
+    public Node(T root) {
         this.data = root;
     }
     public void setLeft(Node left){

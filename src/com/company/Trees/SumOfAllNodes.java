@@ -12,7 +12,7 @@ public class SumOfAllNodes {
     }
     public int sum( Node n){
         if(n == null) return 0;
-        return sum(n.left) + sum(n.right) + n.data;
+        return sum(n.left) + sum(n.right) + (Integer)n.data;
     }
 
 }

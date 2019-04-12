@@ -17,7 +17,7 @@ public class BinarySearchTree {
     private void insert(int data){
         Node currNode = this.root;
         while(true) {
-            if (data <= currNode.data) {
+            if (data <= (Integer) currNode.data) {
                 if (currNode.left != null) {
                     currNode = currNode.left;
                 }else {
