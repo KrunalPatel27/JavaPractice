@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class SumOfAllNodesTest {
 
     @org.junit.jupiter.api.Test
-    //add tests
+    //add tests 1
     void sum() {
         SumOfAllNodes sumOfAllNodes = new SumOfAllNodes();
         int val = sumOfAllNodes.sum(sumOfAllNodes.root);
