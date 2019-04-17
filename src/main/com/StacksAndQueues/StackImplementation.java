@@ -1,5 +1,7 @@
 package com.StacksAndQueues;
 
+import java.util.LinkedList;
+
 /**
  * Implement a stack that has the following methods:
  *
@@ -14,4 +16,47 @@ package com.StacksAndQueues;
  * Each method should run in constant time O(1).
  */
 public class StackImplementation {
+    Node top;
+
+    class Node{
+        int val;
+        Node before;
+        int currMaxVal;
+        public Node (int val, Node before, int currMaxVal){
+            this.val = val;
+            this.before = before;
+            this.currMaxVal = currMaxVal;
+        }
+
+    }
+
+    public StackImplementation(){
+        this.InitializeStack();
+        System.out.println(top.currMaxVal);
+        top = top.before;
+        System.out.println(top.currMaxVal);
+        top = top.before;
+        System.out.println(top.currMaxVal);
+        top = top.before;
+        System.out.println(top.currMaxVal);
+
+    }
+
+    private void InitializeStack() {
+        top = this.Node(top, 2);
+        top = this.Node(top, 5);
+        top = this.Node(top, 4);
+        top = this.Node(top, 7);
+    }
+
+    public Node Node(Node previousNode, int newVal) {
+        if(previousNode == null){
+            return new Node(newVal, null, newVal);
+        }
+        if(previousNode.currMaxVal < newVal){
+            return new Node(newVal, previousNode, newVal);
+        }else{
+            return new Node(newVal, previousNode, previousNode.currMaxVal);
+        }
+    }
 }

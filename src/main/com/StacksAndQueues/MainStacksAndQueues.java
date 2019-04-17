@@ -6,6 +6,9 @@ public class MainStacksAndQueues {
             case 1:
                 QueueUsingStacks queueUsingStacks = new QueueUsingStacks();
                 break;
+
+            case 2:
+                StackImplementation stackImplementation = new StackImplementation();
         }
     }
 }
