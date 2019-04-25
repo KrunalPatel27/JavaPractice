@@ -6,6 +6,9 @@ public class MainArrays {
             case 1:
                 Island island = new Island();
                 break;
+
+            case 2:
+                FindWord findWord = new FindWord();
         }
     }
 }
