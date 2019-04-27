@@ -9,6 +9,9 @@ public class MainStacksAndQueues {
 
             case 2:
                 StackImplementation stackImplementation = new StackImplementation();
+
+            case 3:
+                BalancedString balancedString = new BalancedString();
         }
     }
 }
