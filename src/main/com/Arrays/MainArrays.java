@@ -9,6 +9,10 @@ public class MainArrays {
 
             case 2:
                 FindWord findWord = new FindWord();
+
+            case 3:
+                LargestProductOfThreeNumbers largestProductOfThreeNumbers
+                        = new LargestProductOfThreeNumbers();
         }
     }
 }
