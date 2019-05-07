@@ -32,12 +32,16 @@ public class Main {
                 break;
             case 8:
                 NonDuplicateInteger nonDuplicateInteger = new NonDuplicateInteger();
+                break;
             case 9:
                 ConwaysGame conwaysGame = new ConwaysGame();
+                break;
             case 10:
                 AllSubsetOfArray allSubsetOfArray = new AllSubsetOfArray();
+                break;
             case 11:
                 StockBuyAndSell stockBuyAndSell = new StockBuyAndSell();
+                break;
         }
 
     }
