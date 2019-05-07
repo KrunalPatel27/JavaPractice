@@ -13,6 +13,11 @@ public class MainArrays {
             case 3:
                 LargestProductOfThreeNumbers largestProductOfThreeNumbers
                         = new LargestProductOfThreeNumbers();
+                break;
+            case 4:
+                MatrixRepeatedValues matrixRepeatedValues = new MatrixRepeatedValues();
+                break;
+
         }
     }
 }

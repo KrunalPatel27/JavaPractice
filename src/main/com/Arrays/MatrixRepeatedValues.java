@@ -27,5 +27,18 @@ package com.Arrays;
  */
 public class MatrixRepeatedValues {
 
+    public MatrixRepeatedValues(){
+        int N = 6, K = 6;
+        System.out.println("There are "+ findAllKs(N, K) +" of " + K + "'s");
+    }
 
+    private int findAllKs(int N, int K) {
+        int count = 0;
+        for(int i =1; i<= N; i++){
+            if(i*N >= K && K%i ==0){
+                count++;
+            }
+        }
+        return count;
+    }
 }
