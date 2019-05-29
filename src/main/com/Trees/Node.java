@@ -3,8 +3,8 @@ package com.Trees;
 public class Node<T> {
     public T data;
 
-    public Node left;
-    public Node right;
+    public Node left = null;
+    public Node right = null;
 
     public Node(T root) {
         this.data = root;
@@ -14,5 +14,17 @@ public class Node<T> {
     }
     public void setRight(Node right){
         this.right = right;
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public Node getLeft() {
+        return left;
+    }
+
+    public Node getRight() {
+        return right;
     }
 }

@@ -11,6 +11,10 @@ public class MainTrees {
                 ArithmeticExpressionTree arithmeticExpressionTree
                         = new ArithmeticExpressionTree();
                 break;
+            case 3:
+                DFS_LargestBinaryTree dfs_largestBinaryTree
+                        = new DFS_LargestBinaryTree();
         }
+
     }
 }
