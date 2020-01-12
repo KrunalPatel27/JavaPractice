@@ -7,6 +7,10 @@ public class MainAmazon {
             case 1:
                 MoviesOnFlight moviesOnFlight = new MoviesOnFlight();
                 break;
+
+            case 2:
+                NmostPopularToys nmostPopularToys = new NmostPopularToys();
+                break;
             default:
                break;
         }
