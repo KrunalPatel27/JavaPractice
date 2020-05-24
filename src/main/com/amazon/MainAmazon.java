@@ -11,6 +11,17 @@ public class MainAmazon {
             case 2:
                 NmostPopularToys nmostPopularToys = new NmostPopularToys();
                 break;
+
+            case 3:
+                BFS_rottingOranges bfs_rottingOranges = new BFS_rottingOranges();
+                break;
+
+            case 4:
+                Top_K_Words top_k_words = new Top_K_Words();
+
+            case 5:
+                rand bfs_serverFarm = new rand();
+
             default:
                break;
         }
